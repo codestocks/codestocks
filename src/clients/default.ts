@@ -4,10 +4,10 @@ import axiosRetry from 'axios-retry'
 export default class DefaultClient {
   protected http: AxiosInstance
 
-  constructor(private baseURL: string, private config?: AxiosRequestConfig) {
+  constructor(baseURL: string, config?: AxiosRequestConfig) {
     this.http = axios.create({
-      ...this.config,
-      baseURL: this.baseURL,
+      baseURL,
+      ...config,
     })
 
     axiosRetry(this.http, {

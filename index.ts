@@ -11,10 +11,13 @@ const schema = () => buildSchema(fs.readFileSync(SCHEMA_PATH).toString())
 
 const app = express()
 
-app.use('/graphql', graphqlHTTP({
-  schema: schema(),
-  rootValue: resolvers,
-  graphiql: true,
-}))
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: schema(),
+    rootValue: resolvers,
+    graphiql: true,
+  })
+)
 
 app.listen(PORT, () => console.log(`Code stocks running on ${PORT}`))
