@@ -1,7 +1,6 @@
 import express from 'express'
 import { graphqlHTTP } from 'express-graphql'
 import { buildSchema } from 'graphql'
-// import { ApolloServer, graphiqlExpress } from 'apollo-server-express'
 import fs from 'fs'
 import resolvers from './src/graphql/resolvers'
 
